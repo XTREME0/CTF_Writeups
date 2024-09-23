@@ -1,4 +1,4 @@
-<img src="/imgs/patriotctf/banner.png" style="zoom:80%;" />
+<img src="./imgs/patriotctf/banner.png" style="zoom:80%;" />
 
 # PatriotCTF 2024
 
