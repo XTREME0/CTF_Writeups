@@ -87,7 +87,7 @@ if __name__ == '__main__':
 
 Home page (/):
 
-![image-20240923172325396](/imgs/patriotctf/img1.png)
+![image-20240923172325396](./imgs/patriotctf/img1.png)
 
 First i noticed that:
 
@@ -124,7 +124,7 @@ secret = uuid.UUID('31333337-1337-1337-1337-133713371337')
 
 so we already have the secret we can generate the administrator id:
 
-![image-20240923174319661](/imgs/patriotctf/img2.png)
+![image-20240923174319661](./imgs/patriotctf/img2.png)
 
 Now that we got the administrator id, we have to find a way to set the session cookie to the values we need, to impersonate the admin.
 
@@ -155,30 +155,30 @@ def status():
     return status_content
 ```
 
-![image-20240923181221057](/imgs/patriotctf/img3.png)
+![image-20240923181221057](./imgs/patriotctf/img3.png)
 
 (server_start_time = Server time - Server uptime) , formate it into the right format 20240923171014 and then use it to get the secret_key.
 
 (note that sometimes you gotta subtract 1 second for it to work, so i tested with both values against the original cookie to check if the key was actually valid)
 
-![image-20240923191953606](/imgs/patriotctf/img4.png)
+![image-20240923191953606](./imgs/patriotctf/img4.png)
 
 Let's hop into Burpsuite and see how that cookie looks:
 
-![image-20240923192720442](/imgs/patriotctf/img5.png)
+![image-20240923192720442](./imgs/patriotctf/img5.png)
 
 Now let's generate our cookie using a tool like flask-unsign with the secret_key and the values we want
 
-![image-20240923192308026](/imgs/patriotctf/img6.png)
+![image-20240923192308026](./imgs/patriotctf/img6.png)
 
 Next I'm gonna replace that cookie with the one I just generated:
 
-![image-20240923193019372](/imgs/patriotctf/img7.png)
+![image-20240923193019372](./imgs/patriotctf/img7.png)
 
-![](/imgs/patriotctf/img8.png)
+![](./imgs/patriotctf/img8.png)
 
 Now let's visit */admin*:
 
-![](/imgs/patriotctf/img9.png)
+![](./imgs/patriotctf/img9.png)
 
 Boom we got the flag :  **PCTF{Imp3rs0n4t10n_Iz_Sup3r_Ezz}**
