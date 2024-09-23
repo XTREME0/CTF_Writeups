@@ -157,7 +157,7 @@ def status():
 
 ![image-20240923181221057](./imgs/patriotctf/img3.png)
 
-(server_start_time = Server time - Server uptime) , formate it into the right format 20240923171014 and then use it to get the secret_key.
+(server_start_time = Server time - Server uptime) , formate it into the right format 20240923171014 and then use it to get the secret_key (i used a different one the following imgs, session resets every 10 min).
 
 (note that sometimes you gotta subtract 1 second for it to work, so i tested with both values against the original cookie to check if the key was actually valid)
 
